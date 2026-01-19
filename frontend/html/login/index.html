@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSTrader - Auth</title>
+  <link rel="stylesheet" href="../styles/auth.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://i.postimg.cc/Bvf318Fw/Chat-GPT-Image-21-11-2025-20-01-17-Photoroom.png"
+    />
+</head>
+
+<body>
+  <section class="auth">
+    <div class="flip-container" id="authFlip">
+      <div class="flipper">
+
+        <!-- FRONT: LOGIN -->
+        <div class="auth-container front" id="Login">
+          <div class="left-content-side">
+            <h2>Login</h2>
+            <form action="#" method="post">
+              <div class="input-group">
+                <label for="email-login">Email</label>
+                <div class="input-wrapper">
+                  <input type="text" id="email-login" name="email" required>
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="password-login">Password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="password-login" name="password" required>
+                  <i class="fa-solid fa-eye" id="togglePasswordLogin"></i>
+                </div>
+              </div>
+
+              <h5>Don't have an account yet?
+                <a href="#" id="goToRegister">Create one here</a>
+              </h5>
+
+              <button class="btn-auth" type="submit">Login</button>
+            </form>
+          </div>
+
+          <div class="right-content-side">
+            <div class="right-content-text">
+              <h3>Welcome back!</h3>
+              <p>Log into your account to continue!</p>
+            </div>
+            <img src="https://i.postimg.cc/zBw02yj9/Chat-GPT-Image-7-11-2025-20-27-43-Photoroom.png" alt="">
+          </div>
+        </div>
+
+        <!-- BACK: REGISTER -->
+        <div class="auth-container back" id="Register">
+          <div class="left-content-side">
+            <h2>Create Account</h2>
+            <form action="#" method="post">
+              <div class="input-group">
+                <label for="username-register">Username</label>
+                <div class="input-wrapper">
+                  <input type="text" id="username-register" name="username" required>
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="email-register">Email</label>
+                <div class="input-wrapper">
+                  <input type="email" id="email-register" name="email" required>
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="password-register">Password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="password-register" name="password" required>
+                  <i class="fa-solid fa-eye" id="togglePasswordRegister"></i>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="cpassword-register">Confirm Password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="cpassword-register" name="cpassword" required>
+                  <i class="fa-solid fa-eye" id="toggleCPasswordRegister"></i>
+                </div>
+              </div>
+
+              <h5>Already have an account?
+                <a href="#" id="goToLogin">Sign in here</a>
+              </h5>
+
+              <button class="btn-auth" type="submit">Create Account</button>
+            </form>
+          </div>
+
+          <div class="right-content-side">
+            <div class="right-content-text">
+              <h3>Welcome!</h3>
+              <p>Create your account and start your journey with us.</p>
+            </div>
+            <img src="https://i.postimg.cc/zBw02yj9/Chat-GPT-Image-7-11-2025-20-27-43-Photoroom.png" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="../scripts/auth.js"></script>
+
+</body>
+
+</html

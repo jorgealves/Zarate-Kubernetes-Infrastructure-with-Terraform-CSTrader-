@@ -1,0 +1,143 @@
+#modal-market {
+  display: none;
+}
+
+.modal-market {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 8, 15, 0.75);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-market-content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: 14px;
+  width: 380px;
+  max-width: 90%;
+  box-shadow: 0 0 25px rgba(183, 167, 255, 0.15);
+  animation: popUp 0.25s ease;
+}
+
+.skin-card-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.skin-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.skin-card-modal .skin-name {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.skin-card-modal .skin-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.skin-card-modal .skin-thumb {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skin-card-modal .skin-thumb img {
+  width: 88%;
+  object-fit: contain;
+}
+
+.skin-card-modal .price {
+  margin-top: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.skin-card-modal .actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-cancel {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+.btn-cancel:hover {
+  color: var(--primary-color);
+  border-color: var(--accent-color);
+}
+
+.skin-card-modal .btn-buynow-confirm {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.skin-card-modal .btn-buynow-confirm:hover {
+  background: rgba(183, 167, 255, 0.12);
+  box-shadow: 0 0 18px rgba(183, 167, 255, 0.25);
+}
+
+.close-modal {
+  position: absolute;
+  right: 6px;
+  top: 4px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-modal:hover {
+  color: var(--accent-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+

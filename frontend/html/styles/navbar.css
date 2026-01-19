@@ -1,0 +1,143 @@
+@import url(./main.css);
+
+.Logo-nav {
+    height: 120px;
+    vertical-align: middle;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    height: 100px;
+    gap: 6px;
+}
+
+.navbar a {
+    position: relative;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar>a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.navbar>a:hover {
+    color: var(--accent-color);
+}
+
+.navbar>a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.logo-link::after {
+    display: none;
+}
+
+.right-navbar {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+
+.signin-button {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.signin-button:hover {
+    color: var(--hover-accent-color);
+}
+
+.signup-button {
+    background: var(--accent-color);
+    color: var(--background-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.signup-button:hover {
+    background: var(--hover-accent-color);
+    transform: scale(1.05);
+}
+
+.logged-in {
+    display: none;
+    align-items: center;
+    gap: 15px;
+}
+
+.logged-out {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-name {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.teste {
+    border: 2px solid var(--border-color);
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.user-funds {
+    color: var(--primary-color);
+    padding: 0 12px 0 12px;
+    font-weight: bold;
+}
+
+.logout-button:hover {
+    color: var(--accent-color);
+}
+
+.logout-button:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.add-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 22px;
+
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;       
+    
+    padding-bottom: 2px;     
+    
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.add-icon:hover {
+    transform: scale(1.1);
+}
+

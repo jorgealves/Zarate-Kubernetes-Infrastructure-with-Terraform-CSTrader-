@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSTrader</title>
+    <link rel="stylesheet" href="../styles/Marketplace.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://i.postimg.cc/Bvf318Fw/Chat-GPT-Image-21-11-2025-20-01-17-Photoroom.png"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="navbar"></div>
+    </header>
+
+    <main>
+      <section class="inventory-hero">
+        <div>
+          <h1>Marketplace</h1>
+          <p>Explore, buy, or trade your favorite skins with ease!</p>
+        </div>
+
+        <div class="controls">
+          <input
+            id="search"
+            class="search-input"
+            placeholder="Search skins (e.g., Doppler, Tiger Tooth)"
+          />
+          <select id="filter-type" class="select">
+            <option value="all">All knife types</option>
+            <option value="butterfly">Butterfly</option>
+            <option value="karambit">Karambit</option>
+            <option value="m9 bayonet">M9 Bayonet</option>
+            <option value="kukri">Kukri</option>
+          </select>
+          <select id="filter-skin" class="select">
+            <option value="all">All finishes</option>
+            <option value="tiger tooth">Tiger Tooth</option>
+            <option value="doppler">Doppler</option>
+            <option value="marble fade">Marble Fade</option>
+            <option value="case hardened">Case Hardened</option>
+          </select>
+          <select id="sort" class="select">
+            <option value="default">Sort: Default</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="price-asc">Price (↑)</option>
+            <option value="price-desc">Price (↓)</option>
+            <option value="float-asc">Lowest Float</option>
+            <option value="float-desc">Highest Float</option>
+          </select>
+          <button id="view_my_skins" class="view_my_skins">
+            View my skins
+          </button>
+          <button id="reset" class="reset">Reset</button>
+        </div>
+      </section>
+
+      <div id="user-marketplace-container"></div>
+
+      <section id="skin_display" class="inventory-grid"></section>
+
+      <div id="empty" class="empty" style="display: none">
+        No skins match your filters.
+      </div>
+
+      <div class="modal-market" id="modal-market"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../scripts/marketplace.js"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — CSTrader</title>
+  <link rel="stylesheet" href="../styles/skin_management.css" />
+  <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://i.postimg.cc/Bvf318Fw/Chat-GPT-Image-21-11-2025-20-01-17-Photoroom.png"
+    />
+</head>
+
+<body>
+  <header>
+    <div id="navbar"></div>
+  </header>
+
+  <main>
+    <section class="inventory-hero">
+      <div>
+        <h1>Admin Panel</h1>
+        <p>Skin management</p>
+      </div>
+
+      <div class="controls">
+        <input id="search" class="search-input" placeholder="Search skins (e.g., Doppler, Tiger Tooth)" />
+        <select id="filter-type" class="select">
+          <option value="all">All knife types</option>
+        </select>
+
+        <select id="filter-skin" class="select">
+          <option value="all">All finishes</option>
+        </select>
+        <select id="sort" class="select">
+          <option value="default">Sort: Default</option>
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="name-desc">Name (Z-A)</option>
+          <option value="float-asc">Lowest Float </option>
+          <option value="float-desc">Highest Float</option>
+        </select>
+        <button id="reset" class="reset">Reset</button>
+        <button id="btn-add" class="btn">+ Add new skin</button>
+      </div>
+    </section>
+
+    <section id="skin_display" class="inventory-grid"></section>
+    <div id="empty" class="empty" style="display:none;">No skins match your filters.</div>
+
+    <!-- Drawer — substitui o modal. Fica dentro do main (como pediste). -->
+    <aside id="drawer" class="drawer" aria-hidden="true">
+      <div class="drawer-panel">
+        <div class="drawer-header">
+          <h2 id="drawer-title">Add Skin</h2>
+          <button id="drawer-close" class="btn">Close</button>
+        </div>
+
+        <form id="skin-form" class="drawer-form">
+          <label>Knife Type
+            <input id="f-type" required />
+          </label>
+          <label>Skin Type
+            <input id="f-skin" required />
+          </label>
+          <label>Quantity
+            <input id="f-quantity" type="number" min="1" required />
+          </label>
+          <label>Float
+            <select id="f-float" class="select">
+              <option value="Factory New" selected>Factory New</option>
+              <option value="Minimal Wear">Minimal Wear</option>
+              <option value="Field Tested">Field Tested</option>
+              <option value="Well Worn">Well Worn</option>
+              <option value="Battle Scarred">Battle Scarred</option>
+            </select>
+          </label>
+
+          <label>Image URL
+            <input id="f-link" required />
+          </label>
+
+          <div style="display:flex;gap:8px;margin-top:12px;">
+            <button type="submit" id="btn-save" class="btn btn-primary">Save</button>
+            <button type="button" id="btn-cancel" class="btn">Cancel</button>
+            <button type="button" id="btn-delete" class="btn btn-danger" style="margin-left:auto;display:none;">Delete
+              Skin</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+
+  </main>
+
+  <div id="loading-spinner" class="spinner hidden"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="../scripts/skin_management.js"></script>
+</body>
+
+</html>

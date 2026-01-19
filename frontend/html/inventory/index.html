@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Inventory — CSTrader</title>
+    <link rel="stylesheet" href="../styles/inventory.css">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://i.postimg.cc/Bvf318Fw/Chat-GPT-Image-21-11-2025-20-01-17-Photoroom.png"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="navbar"></div>
+    </header>
+
+    <main>
+      <section class="inventory-hero">
+        <div>
+          <h1>My Inventory</h1>
+          <p>View and manage the skins you own</p>
+        </div>
+
+       <div class="controls">
+        <input id="search" class="search-input" placeholder="Search skins (e.g., Doppler, Tiger Tooth)" />
+        <select id="filter-type" class="select">
+          <option value="all">All knife types</option>
+        </select>
+        <select id="filter-skin" class="select">
+          <option value="all">All finishes</option>
+        </select>
+
+        <select id="sort" class="select">
+          <option value="default">Sort: Default</option>
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="name-desc">Name (Z-A)</option>
+          <option value="float-asc">Lowest Float </option>
+          <option value="float-desc">Highest Float</option>
+        </select>
+        <button id="reset" class="reset">Reset</button>
+
+        <button id="transaction_history" class="btn">Transaction History</button>
+      </div>
+      </section>
+
+      <section id="skin_display" class="inventory-grid"></section>
+      <div id="empty" class="empty" style="display: none">
+        No skins match your filters.
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../scripts/inventory.js"></script>
+  </body>
+</html>

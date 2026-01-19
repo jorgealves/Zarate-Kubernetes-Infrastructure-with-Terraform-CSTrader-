@@ -1,0 +1,390 @@
+@import url(./main.css);
+
+
+/*  Hero Slider Styles  */
+
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  box-sizing: border-box;
+}
+
+.hero-content.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.hero-content.exit-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+.hero-content-left {
+  flex: 1;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.hero-content-left h1 {
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.hero-content-left .highlight {
+  color: #b7a7ff;
+}
+
+.hero-content-left p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.signup-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #b7a7ff;
+  color: #131219;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.signup-button:hover {
+  background-color: #a392ff;
+  transform: scale(1.05);
+}
+
+.hero-content-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 80%;
+  max-width: 600px;
+  filter: drop-shadow(0 0 15px rgba(183, 167, 255, 0.4));
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1.2s ease;
+}
+
+.hero-content.active .hero-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+
+
+/*  Tutorial Steps Styles  */
+.tutorial {
+  width: 100%;
+  max-width: 1700px;
+  display: flex;
+  gap: 6px;
+  margin: 0 auto 0 auto;
+}
+
+.steps {
+  width: 90%;
+  background: transparent;
+  padding: 12px 24px;
+}
+
+.step {
+  display: flex;
+  gap: 20px;
+  padding: 26px 6px;
+  align-items: flex-start;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background .28s ease;
+}
+
+.step:last-child {
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #232323;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4) inset;
+  flex-shrink: 0;
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.icon::after {
+  content: "✓";
+  font-size: 18px;
+  line-height: 1;
+}
+
+.step-content {
+  flex: 1;
+  color: #fff;
+}
+
+.step h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.step p {
+  margin: 0;
+  line-height: 1.55;
+  font-size: 0.95rem;
+  max-width: 560px;
+}
+
+.step.active .icon {
+  background: #ffffff;
+  color: #0b0b0b;
+  transform: scale(1.03);
+}
+
+.image-area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-area img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+
+
+
+
+
+
+
+/*  Skins Carousel Styles  */
+
+.skins-section {
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  position: relative;
+  height: 340px;
+}
+
+.carousel-item {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.8) translateZ(-200px);
+  transition: all 1s ease;
+  width: 260px;
+  background: #141424;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+  z-index: 5;
+}
+
+.carousel-item.prev1 {
+  opacity: 0.6;
+  transform: rotateY(30deg) translateX(-240px) translateZ(-100px);
+  z-index: 4;
+}
+
+.carousel-item.prev2 {
+  opacity: 0.3;
+  transform: rotateY(45deg) translateX(-420px) translateZ(-200px);
+  z-index: 3;
+}
+
+.carousel-item.next1 {
+  opacity: 0.6;
+  transform: rotateY(-30deg) translateX(240px) translateZ(-100px);
+  z-index: 4;
+}
+
+.carousel-item.next2 {
+  opacity: 0.3;
+  transform: rotateY(-45deg) translateX(420px) translateZ(-200px);
+  z-index: 3;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.info .type {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.info .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cta {
+  margin-top: 80px;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cta button {
+  background: #805af5;
+  border: none;
+  color: white;
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.cta button:hover {
+  background: #6840e0;
+}
+
+
+
+
+
+
+
+/*  FAQ Section Styles  */
+.faq-section {
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.faq-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 10px 0;
+  color: #ddd;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 10px 20px 20px;
+}
+
+.icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg);
+}
